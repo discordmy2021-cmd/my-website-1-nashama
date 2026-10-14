@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Shield, Bell, User, Phone } from 'lucide-react';
-import Logo from './Logo';
+import { Menu, X, Shield, Bell, User } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -11,11 +11,9 @@ interface NavbarProps {
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  onOpenBooking,
   onOpenCaptain,
   onOpenNotifications,
   onOpenAuth,
-  onOpenCall,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="#how-it-works" className="hover:text-red-500 transition-colors">كيف يعمل؟</a>
           <a href="#captain-app" className="hover:text-red-500 transition-colors">تطبيق السائق</a>
           
-          {/* رابط مركز التحكم الجديد */}
+          {/* رابط مركز التحكم */}
           <a 
             href="https://nashama-drive-web-ap-fhr3.bolt.host/" 
             target="_blank" 
