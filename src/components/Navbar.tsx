@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Shield, Bell, User } from 'lucide-react';
-import { Logo } from './Logo';
+import { Menu, X, Shield, Bell, Briefcase } from 'lucide-react';
 
 interface NavbarProps {
   onOpenBooking: () => void;
@@ -21,19 +20,18 @@ export const Navbar: React.FC<NavbarProps> = ({
     <header className="sticky top-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         
-        {/* Logo */}
         <div className="flex items-center gap-3">
-          <Logo />
+          <a href="#" className="flex items-center gap-2 text-2xl font-black tracking-wider text-white">
+            <span className="text-red-600">نشاما</span> درايف
+          </a>
         </div>
 
-        {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-300">
           <a href="#" className="text-red-500 font-semibold transition-colors">الرئيسية</a>
           <a href="#features" className="hover:text-red-500 transition-colors">مميزاتنا</a>
           <a href="#how-it-works" className="hover:text-red-500 transition-colors">كيف يعمل؟</a>
           <a href="#captain-app" className="hover:text-red-500 transition-colors">تطبيق السائق</a>
           
-          {/* رابط مركز التحكم */}
           <a 
             href="https://nashama-drive-web-ap-fhr3.bolt.host/" 
             target="_blank" 
@@ -46,7 +44,6 @@ export const Navbar: React.FC<NavbarProps> = ({
           <a href="#contact" className="hover:text-red-500 transition-colors">تواصل معنا</a>
         </nav>
 
-        {/* Actions & Buttons */}
         <div className="hidden md:flex items-center gap-4">
           <button
             onClick={onOpenNotifications}
@@ -67,14 +64,13 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={onOpenAuth}
-            className="px-6 py-2.5 text-sm font-bold text-white bg-red-600 hover:bg-red-700 rounded-full shadow-lg shadow-red-600/30 transition-all flex items-center gap-2"
+            className="px-5 py-2.5 text-xs font-bold text-white bg-red-600 hover:bg-red-700 rounded-full shadow-lg shadow-red-600/30 transition-all flex items-center gap-2"
           >
-            <User className="w-4 h-4" />
-            غرفة حساب
+            <Briefcase className="w-4 h-4" />
+            انضم لوكلاء الشحن
           </button>
         </div>
 
-        {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenNotifications}
@@ -91,7 +87,6 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
       {isOpen && (
         <div className="md:hidden bg-neutral-950 border-b border-neutral-800 px-4 pt-2 pb-6 space-y-3">
           <a href="#" className="block py-2 text-red-500 font-medium">الرئيسية</a>
@@ -118,7 +113,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => { setIsOpen(false); onOpenAuth(); }}
               className="w-full py-2.5 text-center text-sm font-bold text-white bg-red-600 rounded-xl shadow-lg shadow-red-600/30"
             >
-              غرفة حساب / تسجيل دخول
+              انضم لوكلاء الشحن
             </button>
           </div>
         </div>
